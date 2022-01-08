@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-flex align-items-center justify-content-between">
+                                    <h4 class="mb-0">Task Details</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+        
+                                        <h4 class="card-title">Task Details:</h4>
+    
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Task Id</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" name ="username" type="text" value="{{tash_obj.task_id}}" id="example-text-input" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Task Name</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" name ="username" type="text" value="{{tash_obj.task_name}}" id="example-text-input" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-email-input" class="col-md-2 col-form-label">Task_created_date</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" name ="username" type="text" value="{{tash_obj.task_created_date}}" id="example-text-input" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-email-input" class="col-md-2 col-form-label">Task_created_time</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" name ="username" type="text" value="{{tash_obj.test_created_time}}" id="example-text-input" readonly>
+                                            </div>
+                                        </div>
+    
+                                        <div class="mb-3 row">
+                                            <label for="example-email-input" class="col-md-2 col-form-label">Task_end_date</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" name ="username" type="text" value="{{tash_obj.task_end_date}}" id="example-text-input" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-email-input" class="col-md-2 col-form-label">Task_end_time</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" name ="username" type="text" value="{{tash_obj.task_end_time}}" id="example-text-input" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-email-input" class="col-md-2 col-form-label">Task_Detail</label>
+                                            <div class="col-md-10">
+                                                <textarea  class="form-control" rows="8" readonly>{{tash_obj.task_details}}</textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <!-- <div class="col-lg-6">
+                                                <div class="mb-3 mt-3">
+                                                   <a href ="{" onClick="window.history.go(-1); return false;"> <button class="btn btn-secondary waves-effect" name ="userprofile_form" type="submit">Back</button></a>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                        
+                                    </div>
+                                    </div>
+                                </div>
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+  <!-- Start Form Sizing -->
+
+<!-- End Form Sizing -->
+
+
+                        
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+
+            
+            </div>
+        </div>
+{% endblock %}

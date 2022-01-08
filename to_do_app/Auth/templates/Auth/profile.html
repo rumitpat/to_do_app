@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+            <div class="main-content">
+
+                <div class="page-content">
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box d-flex align-items-center justify-content-between">
+                                    <h4 class="mb-0">Profile</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form method ="POST" name ="userprofile_form" value ="userprofile_form" enctype="multipart/form-data">{% csrf_token %}
+        
+                                        <h4 class="card-title">User Details:</h4>
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">UserImage</label>
+                                            <div class="col-md-10">
+                                            <div class="user-thumb text-left mb-4">
+                                                <img src="{{ login_user_obj.userimage.url }}" class="rounded-circle img-thumbnail avatar-lg"  alt="thumbnail">
+                                            </div>
+                                            <input type="file" id ="file" name ="userimage" accept="" >
+                                        </div>
+                                        </div>
+    
+                                        <div class="mb-3 row">
+                                            <label for="example-text-input" class="col-md-2 col-form-label">Username</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" name ="username" type="text" value="{{login_user_obj.username}}" id="example-text-input" readonly>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-email-input" class="col-md-2 col-form-label">Email</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control"name ="useremail" type="email" value="{{login_user_obj.useremail}}" id="example-email-input">
+                                            </div>
+                                        </div>
+                                        <div class="mb-3 row">
+                                            <label for="example-number-input" class="col-md-2 col-form-label">Mobile Number</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="number" name ="usermobilenumber" value="{{login_user_obj.usermobilenumber}}" id="example-number-input">
+                                            </div>
+                                        </div>
+    
+                                        <div class="mb-3 row">
+                                            <label for="example-date-input" class="col-md-2 col-form-label">Date Of Birth</label>
+                                            <div class="col-md-10">
+                                                <input class="form-control" type="date" name ="userdob" value='{{ login_user_obj.userdob }}' id="example-date-input">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="mb-3 mt-3">
+                                                    <button class="btn btn-primary w-sm waves-effect waves-light" name ="userprofile_form" type="submit">Update</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form></div>
+                                </div>
+                            </div> <!-- end col -->
+                        </div>
+                        <!-- end row -->
+  <!-- Start Form Sizing -->
+  <div class="row">
+    <div class="col-lg-12">
+        <div class="card mb-5">
+            <div class="card-body">
+                <form method ="POST" name ="userpassword_form" value ="userpassword_form">{% csrf_token %}
+                <h4 class="card-title">Password:</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label" for="default-input">Password</label>
+                                <input class="form-control form-control-sm" name ="userpassword" value ="{login_user_obj.userpassword}}" type="password" id="default-input" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="mb-3 mt-3">
+                                <label class="form-label" for="form-sm-input">New Password</label>
+                                <input class="form-control form-control-sm"  name ="newpassword" type="password" id="form-sm-input" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="mb-3 mt-3">
+                            <button class="btn btn-primary w-sm waves-effect waves-light" name ="userpassword_form" type="submit">Change Password</button>
+                            </div>
+                        </div>
+                    </div>
+            </form></div>
+        </div>
+    </div>
+</div>
+<!-- End Form Sizing -->
+
+<script type="text/javascript">
+    $('#file').change(function(e) {
+      console.log("2",e)
+          var file =$("#file").val()
+          console.log(file)
+    })
+</script>               
+                    </div> <!-- container-fluid -->
+                </div>
+                <!-- End Page-content -->
+
+              
+               
+            </div>
+        </div>
+{% endblock %}
